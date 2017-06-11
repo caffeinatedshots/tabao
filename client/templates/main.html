@@ -1,6 +1,8 @@
 <template name="main">
-main placeholder
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+{{> loginButtons}}
+{{#if currentUser}}
+hello, {{currentUser.username}}
+{{/if}}
+main placeholder<br>
   <a href="/about">about</a>
 </template>
