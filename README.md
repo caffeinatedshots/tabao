@@ -9,8 +9,18 @@ Directory Description:
 
 -client: all client-side stuff (html/css/js)
 
+	-compatibility: client-side js files (basic animations/jquery etc)
+
+	-css: css files
+
+	-templates: html templates
+
+	-app.html (main html referencing flow router's dynamic templates which calls html files in templates folder)
+
 -imports: external references (currently only for account config)
 
 -lib: libraries for fundamental app logic (currently only for flow-router)
+
+-public: for fontawesome icons and static images
 
 -server: driver program
