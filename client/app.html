@@ -1,12 +1,9 @@
 <head>
 	<title>Tabao</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
 </head>
 
-<body>
-  <h1>Tabao</h1>
-  {{> applicationLayout}}
+<body class="subpage">
+{{> content}}
 </body>
-
-<template name="applicationLayout">
-{{> Template.dynamic template=body}}
-</template>
