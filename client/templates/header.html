@@ -5,17 +5,27 @@
 		</nav>
 		<a href="/" class="logo">Tabao</a>
 		<nav class="right">
-			<a href="#" class="button alt">Login</a>
+			{{#if currentUser}}
+			<a href="#" class="button logout">Logout</a>
+			{{else}}
+			<a href="/login" class="button">Login / Signup</a>
+			{{/if}}
 		</nav>
 		<nav id="menu">
 			<ul class="links">
 				<li><a href="/">Home</a></li>
+				{{#if currentUser}}
 				<li><a href="/request">Request</a></li>
 				<li><a href="/deliver">Deliver</a></li>
+				{{/if}}
 				<li><a href="/about">About</a></li>
 			</ul>
 			<ul class="actions vertical">
-				<li><a href="#" class="button fit">Login</a></li>
+				{{#if currentUser}}
+				<li><a href="#" class="button special fit logout">Logout</a></li>
+				{{else}}
+				<li><a href="/login" class="button special fit">Login / Signup</a></li>
+				{{/if}}
 			</ul>
 		</nav>
 	</header>

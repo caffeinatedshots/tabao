@@ -1,0 +1,25 @@
+<template name="login">
+<section class="wrapper">
+	<div class="inner">
+		<div class="row">
+			<div class="6u 12u$(small)" align="center">
+				<h3>Login</h3>
+				<form method="post" class="login">
+					<input type="text" required name="username" placeholder="Username" /><br>
+					<input type="password" required name="password" placeholder="Password" /><br>
+					<input type="submit" value="Login" class="button fit" />
+				</form>
+			</div>
+			<div class="6u$ 12u$(small)">
+				<h3 align="center">Signup</h3>
+				<form method="post" class="signup">
+					<input type="text" required name="username" placeholder="Username" /><br>
+					<input type="password" required name="password" placeholder="Password" /><br>
+					<input type="password" required name="passwordConfirm" onchange="form.password.pattern = this.value" placeholder="Confirm Password" /><br>
+					<input type="submit" value="Signup" class="button special fit" />
+				</form>
+			</div>
+		</div>
+	</div>
+</section>
+</template>

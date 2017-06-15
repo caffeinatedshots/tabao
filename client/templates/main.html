@@ -9,7 +9,12 @@
 					{{/if}}
 					<p>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod<br />sed arcu cras consecuat lorem ipsum dolor sit amet.</p>
 					<ul class="actions">
-						<li><a class="button scrolly">{{> loginButtons}}</a></li>
+						{{#if currentUser}}
+						<li><a href="/request" class="button">Request</a></li>
+						<li><a href="/deliver" class="button special">Deliver</a></li>
+						{{else}}
+						<li><a href="/login" class="button">Get Started</a></li>
+						{{/if}}
 					</ul>
 				</div>
 			</section>
