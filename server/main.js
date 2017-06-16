@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Requests } from '../imports/requestsDB.js';
+import { Accounts } from 'meteor/accounts-base';
 
 Meteor.startup(() => {
   // code to run on server at startup
@@ -21,4 +22,8 @@ Meteor.methods({
 			Remarks: remarks
 		});
   },
+
+  userExists(username){
+  	return Accounts.findUserByUsername(username) != null;
+  }
 });
