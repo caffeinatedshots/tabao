@@ -1,0 +1,37 @@
+<template name="viewRequest">
+<section class="wrapper">
+	<div class="inner" align="center">
+		<h1>Order Request</h1>
+		<div class="table-wrapper">
+			<table class="alt">
+				<tbody>
+					<tr>
+						<td>Name</td>
+						<td>{{request.itemName}}</td>
+					</tr>
+					<tr>
+						<td>From</td>
+						<td>{{request.fromLocation}} - {{request.fromStall}}</td>
+					</tr>
+					<tr>
+						<td>To</td>
+						<td>{{request.toLocation}}</td>
+					</tr>
+					<tr>
+						<td>Price ($)</td>
+						<td>{{request.Price}}</td>
+					</tr>
+					<tr>
+						<td>Remarks</td>
+						<td>{{request.Remarks}}</td>
+					</tr>
+					<tr>
+						<td>Requestor</td>
+						<td><a href="/profile/{{request.Requestor}}">{{request.Requestor}}</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+</template>

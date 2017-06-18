@@ -8,16 +8,11 @@ Template.profile.onCreated(function() {
 });
 
 Template.profile.helpers({
-	username(){
+	user(){
 		var username = FlowRouter.getParam("username");
-		Meteor.call('userExists', username, function(error, result){
-			Session.set("validUser", result);
+		Meteor.call('getUser', username, function(error, result){
+			Session.set("user", result);
 		});
-		if (Session.get("validUser")){
-			return username;
-		}
-		else{
-			return null;
-		}
+		return Session.get("user");
 	}
 });

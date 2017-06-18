@@ -15,6 +15,7 @@
 			<ul class="links">
 				<li><a href="/">Home</a></li>
 				{{#if currentUser}}
+				<li><a href="/profile/{{currentUser.username}}">Profile</a></li>
 				<li><a href="/request">Request</a></li>
 				<li><a href="/deliver">Deliver</a></li>
 				{{/if}}

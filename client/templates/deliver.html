@@ -9,18 +9,16 @@
 							<th>Food</th>
 							<th>From</th>
 							<th>To</th>
-							<th>Price</th>
-							<th>Remarks</th>
+							<th>Price ($)</th>
 						</tr>
 					</thead>
 					<tbody>
 						{{#each requests}}
 							<tr>
-								<td>{{itemName}}</td>
-								<td>{{fromLocation}} - {{fromStall}}</td>
+								<td><a href="viewRequest/{{_id}}">{{itemName}}</a></td>
+								<td>{{fromLocation}}</td>
 								<td>{{toLocation}}</td>
 								<td>{{Price}}</td>
-								<td>{{Remarks}}</td>
 							</tr>
 						{{/each}}
 					</tbody>

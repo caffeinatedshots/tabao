@@ -14,10 +14,11 @@ Template.request.events({
     const fromLocation = event.target.fromLocation.value;
     const fromStall = event.target.fromStall.value;
     const toLocation = event.target.toLocation.value;
-    const price = event.target.price.value;
+    const price = parseFloat(event.target.price.value).toFixed(2);
     const remarks = event.target.remarks.value;
+    const requestor = Meteor.user().username;
 
-    Meteor.call('addRequest', itemName, fromLocation, fromStall, toLocation, price, remarks);
+    Meteor.call('addRequest', itemName, fromLocation, fromStall, toLocation, price, remarks, requestor);
 
     // Clear form
     alert("Request Submitted")
