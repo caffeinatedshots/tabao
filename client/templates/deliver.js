@@ -5,7 +5,11 @@ import { Requests } from '../../imports/requestsDB.js';
 import './deliver.html';
 
 Template.deliver.onCreated(function() {
-	Meteor.subscribe('requests');
+	Meteor.subscribe('allRequests');
+});
+
+Template.deliver.events({
+	
 });
 
 Template.deliver.helpers({

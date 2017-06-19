@@ -1,8 +1,36 @@
 <template name="profile">
 <section class="wrapper">
 	<div class="inner" align="center">
-		<h1>{{#if user}}{{user.username}}{{else}}User not found{{/if}}</h1>
-		User since: {{user.createdAt}}
+		{{#if user}}
+			<h1>{{user.username}}</h1>
+			<strong>User since:</strong> {{user.createdAt}}
+			<h3>Current Requests</h3>
+			<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<th>Food</th>
+							<th>From</th>
+							<th>To</th>
+							<th>Price ($)</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each ownRequests}}
+							<tr>
+								<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
+								<td>{{fromLocation}}</td>
+								<td>{{toLocation}}</td>
+								<td>{{Price}}</td>
+							</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+
+		{{else}}
+			<h1>User not found</h1>
+		{{/if}}
 	</div>
 </section>
 </template>

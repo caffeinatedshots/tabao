@@ -8,7 +8,7 @@ Meteor.startup(() => {
 });
 
 Meteor.methods({
-	'addRequest'(itemName, fromLocation, fromStall, toLocation, price, remarks, requestor) {
+	addRequest(itemName, fromLocation, fromStall, toLocation, price, remarks, requestor) {
 
 		Requests.insert({
 			UserID: Meteor.userId(),
@@ -24,7 +24,11 @@ Meteor.methods({
 		});
   },
 
+  deleteRequest(requestId){
+  		Requests.remove({"_id": requestId});
+  },
+
   getUser(username){
   	return Accounts.findUserByUsername(username);
-  }
+  },
 });

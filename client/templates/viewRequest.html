@@ -1,6 +1,7 @@
 <template name="viewRequest">
 <section class="wrapper">
 	<div class="inner" align="center">
+		{{#with request}}
 		<h1>Order Request</h1>
 		<div class="table-wrapper">
 			<table class="alt">
@@ -32,6 +33,10 @@
 				</tbody>
 			</table>
 		</div>
+		{{#if equals request.Requestor currentUser.username}}
+		<button id="delete">Delete</button>
+		{{/if}}
+		{{/with}}
 	</div>
 </section>
 </template>
