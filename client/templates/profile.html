@@ -16,18 +16,45 @@
 						</tr>
 					</thead>
 					<tbody>
-						{{#each ownRequests}}
+						{{#each allRequests}}
+						{{#if equals Requestor currentUser.username}}
 							<tr>
 								<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
 								<td>{{fromLocation}}</td>
 								<td>{{toLocation}}</td>
 								<td>{{Price}}</td>
 							</tr>
+						{{/if}}
 						{{/each}}
 					</tbody>
 				</table>
 			</div>
 
+			<h3>Current Deliveries</h3>
+			<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<th>Food</th>
+							<th>From</th>
+							<th>To</th>
+							<th>Price ($)</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each allRequests}}
+						{{#if equals Deliverer currentUser.username}}
+							<tr>
+								<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
+								<td>{{fromLocation}}</td>
+								<td>{{toLocation}}</td>
+								<td>{{Price}}</td>
+							</tr>
+						{{/if}}
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
 		{{else}}
 			<h1>User not found</h1>
 		{{/if}}

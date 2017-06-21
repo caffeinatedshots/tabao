@@ -30,11 +30,21 @@
 						<td>Requestor</td>
 						<td><a href="/profile/{{request.Requestor}}">{{request.Requestor}}</a></td>
 					</tr>
+					{{#if request.Deliverer}}
+					<tr>
+						<td>Deliverer</td>
+						<td><a href="/profile/{{request.Deliverer}}">{{request.Deliverer}}</a></td>
+					</tr>
+					{{/if}}
 				</tbody>
 			</table>
 		</div>
 		{{#if equals request.Requestor currentUser.username}}
 		<button id="delete">Delete</button>
+		{{else}}
+		{{#unless request.Deliverer}}
+		<button id="deliver">Deliver</button>
+		{{/unless}}
 		{{/if}}
 		{{/with}}
 	</div>

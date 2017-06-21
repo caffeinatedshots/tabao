@@ -20,6 +20,17 @@ Template.viewRequest.events({
 			alert("Request has been deleted");
 			history.back();
 		};
+	},
+
+	"click #deliver"(event, template){
+		if (confirm("Confirm delivery for " + this.itemName + " ?")){
+			Meteor.call('deliverRequest', this._id, Meteor.user().username, function(err){
+				if (err){
+					alert(err.reason);
+				}
+			});
+			alert("Delivery request confirmed");
+		}
 	}
 });
 

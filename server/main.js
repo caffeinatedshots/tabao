@@ -28,6 +28,12 @@ Meteor.methods({
   		Requests.remove({"_id": requestId});
   },
 
+  deliverRequest(requestId, username){
+  		Requests.update(requestId, {
+  			$set : {Deliverer: username}
+  		});
+  },
+
   getUser(username){
   	return Accounts.findUserByUsername(username);
   },

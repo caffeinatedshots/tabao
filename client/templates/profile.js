@@ -6,8 +6,7 @@ import { Requests } from '../../imports/requestsDB.js';
 import './profile.html';
 
 Template.profile.onCreated(function() {
-	var username = FlowRouter.getParam("username");
-	Meteor.subscribe("userRequests", username);
+	Meteor.subscribe("allRequests");
 });
 
 
@@ -21,7 +20,11 @@ Template.profile.helpers({
 		return Session.get("user");
 	},
 
-	ownRequests(){
+	allRequests(){
 		return Requests.find();
+	},
+
+	equals(item1, item2){
+		return item1 == item2;
 	}
 });
