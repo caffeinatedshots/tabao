@@ -1,28 +1,54 @@
-TABAO
+# TABAO
 
-App Description:
+**App Description**
+
 A food delivery web application that leverages on crowd sourcing to bring affordable food options to peoples’ homes. The traditional food delivery in place now is mainly for small cafes and restaurants and has minimum order amount of approximately $20. For busy individuals who just want a simple meal spending $20 is quite expensive.
 
 With our web application we aim to achieve lowered cost via crowdsourcing. The ideal scenario would be an individual travelling from A to B would conveniently pick up food from around A and deliver it to B, where the requestor would be waiting, for a small fee.
 
-Directory Description:
+**Platform:** MeteorJS
 
--client: all client-side stuff (html/css/js)
+**Core Features**
 
-	-compatibility: client-side js files (basic animations/jquery etc)
+1. In-House User Login
+2. Marketplace for Delivery Requests
+3. Messaging System for Specific Orders
 
-	-css: css files
+**Timeline**
 
-	-templates: html templates
+|**Week**		|**Activity**				|
+|:-------------:|---------------------------|
+|June 4th Week	|Implement Messaging System	|
+|July 1st Week	|Finetune exisiting features|
+|July 2nd Week	|Alpha Testing				|
+|July 3rd Week	|Beta Testing				|
+|July 4th Week	|Enhancements (if any)		|
 
-	-app.html (main html referencing flow router's dynamic templates which calls html files in templates folder)
+**Project Log**
 
--imports: external references (currently only for account config)
+|**Activity**									|**Hours**	|
+|-----------------------------------------------|:---------:|
+|Liftoff Day 1									|9			|
+|Liftoff Day 2									|9			|
+|Idea Exploration								|3			|
+|Meteor Workshop								|5			|
+|Meteor Experimenting & Tutorial				|8			|
+|Idea Finalisation								|8			|
+|Flow Router Research & Implementation			|9			|
+|Login Interface Research & Implementation		|3			|
+|Front-End Template Sourcing & Adaptation		|3			|
+|Food Request Form Implementation				|3			|
+|MongoDB Research & Implementation				|7			|
+|DB to Front-End Marketplace Implementation		|8			|
+|Login Interface Custom UI Implementation		|6			|
+|Route-Level Authentication Implementation		|6			|
+|Custom Profile & Grouped Routes Implementation	|11			|
+|Custom 404 and 403 Routes Implementation		|3			|
+|Request Details Page Implementation			|4			|
+|Delete Request Function Implementation			|4			|
+|Front Page Content Update						|3			|
+|Request Acceptance Implementation				|6			|
+|**Total**										|**106**	|
 
--lib: libraries for fundamental app logic (currently only for flow-router)
-
--public: for fontawesome icons and static images
-
--server: driver program
-
--test to delete
+**Links**
+[Video](http://tiny.cc/tabaovideo) | [Poster](http://tiny.cc/tabaoposter)
