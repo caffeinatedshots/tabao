@@ -14,6 +14,31 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 2. Marketplace for Delivery Requests
 3. Messaging System for Specific Orders
 
+**Technical Elements**
+
+- Mobile-Friendly Responsive Web Template
+- Login/Signup
+	- Server-side Error Handling (Error Reason Displayed as Alerts to User)
+	- Client-Side Authentication for Repeat Passwords for Signup
+- Dynamic Front Page Content for Logged In Users
+- Profile, Request, Deliver Pages only viewable to Logged In Users
+- Profile
+	- Renders Profile of Username from URL
+	- Renders Placeholder if Not Found
+	- Displays Current Deliveries and Requests
+- Request
+	- Client-Side Authentication with Required Fields and Integer Verification
+	- Requests Automatically Displayed at Marketplace
+- Deliver (AKA Marketplace)
+	- Displays All Food Requests
+	- Individual Links to Respective Request Details Page
+- Front-End Code
+	- Modular Templates (Minimises Rewritten Code)
+- Back-End COde
+	- Clearly Seperated Code for Client & Server
+	- Prevent Client from Accessing Sensitive Data
+
+
 **Timeline**
 
 |**Week**		|**Activity**				|
