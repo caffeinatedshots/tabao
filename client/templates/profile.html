@@ -3,7 +3,8 @@
 	<div class="inner" align="center">
 		{{#if user}}
 			<h1>{{user.username}}</h1>
-			<strong>User since:</strong> {{user.createdAt}}
+			User since {{userSince}}
+			{{#unless equals allRequests.count 0}}
 			<h3>Current Requests</h3>
 			<div class="table-wrapper">
 				<table class="alt">
@@ -17,19 +18,21 @@
 					</thead>
 					<tbody>
 						{{#each allRequests}}
-						{{#if equals Requestor currentUser.username}}
-							<tr>
-								<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
-								<td>{{fromLocation}}</td>
-								<td>{{toLocation}}</td>
-								<td>{{Price}}</td>
-							</tr>
-						{{/if}}
+						<tr>
+							<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
+							<td>{{fromLocation}}</td>
+							<td>{{toLocation}}</td>
+							<td>{{Price}}</td>
+						</tr>
 						{{/each}}
 					</tbody>
 				</table>
 			</div>
+			{{else}}
+			<h3>No Current Requests</h3>
+			{{/unless}}
 
+			{{#unless equals allDeliveries.count 0}}
 			<h3>Current Deliveries</h3>
 			<div class="table-wrapper">
 				<table class="alt">
@@ -42,19 +45,20 @@
 						</tr>
 					</thead>
 					<tbody>
-						{{#each allRequests}}
-						{{#if equals Deliverer currentUser.username}}
-							<tr>
-								<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
-								<td>{{fromLocation}}</td>
-								<td>{{toLocation}}</td>
-								<td>{{Price}}</td>
-							</tr>
-						{{/if}}
+						{{#each allDeliveries}}
+						<tr>
+							<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
+							<td>{{fromLocation}}</td>
+							<td>{{toLocation}}</td>
+							<td>{{Price}}</td>
+						</tr>
 						{{/each}}
 					</tbody>
 				</table>
 			</div>
+			{{else}}
+			<h3>No Current Deliveries</h3>
+			{{/unless}}
 		{{else}}
 			<h1>User not found</h1>
 		{{/if}}

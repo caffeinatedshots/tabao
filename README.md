@@ -34,7 +34,7 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 	- Individual Links to Respective Request Details Page
 - Front-End Code
 	- Modular Templates (Minimises Rewritten Code)
-- Back-End COde
+- Back-End Code
 	- Clearly Seperated Code for Client & Server
 	- Prevent Client from Accessing Sensitive Data
 
@@ -76,4 +76,4 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 |**Total**										|**106**	|
 
 **Links**
-[Video](http://tiny.cc/tabaovideo) | [Poster](http://tiny.cc/tabaoposter)
+[Video](http://tiny.cc/tabaovideo2) | [Poster](http://tiny.cc/tabaoposter)

@@ -20,8 +20,20 @@ Template.profile.helpers({
 		return Session.get("user");
 	},
 
+	userSince(){
+		var username = FlowRouter.getParam("username");
+		Meteor.call('getUser', username, function(error, result){
+			Session.set("user", result);
+		});
+		return moment(Session.get("user").createdAt).fromNow();
+	},
+
 	allRequests(){
-		return Requests.find();
+		return Requests.find({"Requestor":FlowRouter.getParam("username")});
+	},
+
+	allDeliveries(){
+		return Requests.find({"Deliverer":FlowRouter.getParam("username")});
 	},
 
 	equals(item1, item2){
