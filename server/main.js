@@ -4,7 +4,9 @@ import { Requests } from '../imports/requestsDB.js';
 import { Accounts } from 'meteor/accounts-base';
 
 Meteor.startup(() => {
-  // code to run on server at startup
+	Meteor.publish('allUsers', function() {
+  		return Meteor.users.find();
+  });
 });
 
 Meteor.methods({

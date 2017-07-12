@@ -1,0 +1,27 @@
+<template name="admin">
+<section class="wrapper">
+	<div class="inner" align="center">
+	<h3>All Users</h3>
+		<div class="table-wrapper">
+			<table class="alt">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Username</th>
+						<th>Created At</th>
+					</tr>
+				</thead>
+				<tbody>
+					{{#each allUsers}}
+					<tr>
+						<td>{{_id}}</td>
+						<td>{{username}}</td>
+						<td>{{momentFormat createdAt 'DD MMMM YYYY, HHmm'}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+</template>
