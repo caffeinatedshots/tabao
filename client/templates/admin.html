@@ -1,22 +1,52 @@
 <template name="admin">
 <section class="wrapper">
 	<div class="inner" align="center">
-	<h3>All Users</h3>
+		<h3>All Users</h3>
+			<div class="table-wrapper">
+				<table class="alt">
+					<thead>
+						<tr>
+							<th>ID</th>
+							<th>Username</th>
+							<th>Created At</th>
+						</tr>
+					</thead>
+					<tbody>
+						{{#each allUsers}}
+						<tr>
+							<td>{{_id}}</td>
+							<td>{{username}}</td>
+							<td>{{momentFormat createdAt 'DD MMMM YYYY, HHmm'}}</td>
+						</tr>
+						{{/each}}
+					</tbody>
+				</table>
+			</div>
+
+		<h3>All Requests</h3>
 		<div class="table-wrapper">
 			<table class="alt">
 				<thead>
 					<tr>
-						<th>ID</th>
-						<th>Username</th>
-						<th>Created At</th>
+						<th>Item</th>
+						<th>From</th>
+						<th>To</th>
+						<th>Requestor</th>
+						<th>Date</th>
+						<th>Status</th>
+						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					{{#each allUsers}}
+					{{#each allRequests}}
 					<tr>
-						<td>{{_id}}</td>
-						<td>{{username}}</td>
-						<td>{{momentFormat createdAt 'DD MMMM YYYY, HHmm'}}</td>
+						<td><a href="viewRequest/{{_id}}">{{itemName}}</a></td>
+						<td>{{fromLocation}}</td>
+						<td>{{toLocation}}</td>
+						<td>{{Requestor}}</td>
+						<td>{{momentFormat Date 'DD MMMM YYYY, HHmm'}}</td>
+						<td>{{#if Deliverer}}Accepted{{else}}Pending Acceptance{{/if}}</td>
+						<td><button id="deleteRequest">Delete</button></td>
 					</tr>
 					{{/each}}
 				</tbody>

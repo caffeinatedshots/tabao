@@ -40,3 +40,27 @@ Template.profile.helpers({
 		return item1 == item2;
 	}
 });
+
+Template.profile.events({
+	"click #requests"(event, template){
+		if($("#requestsTable").css("display") == "block"){
+			$("#requestsTable").hide();
+		}
+		else{
+			$("#deliveriesTable").hide();
+			$("#requestsTable").show();
+		}
+		
+	},
+
+	"click #deliveries"(event, template){
+		if($("#deliveriesTable").css("display") == "block"){
+			$("#deliveriesTable").hide();
+		}
+		else{
+			$("#requestsTable").hide();
+			$("#deliveriesTable").show();
+		}
+		
+	},
+})

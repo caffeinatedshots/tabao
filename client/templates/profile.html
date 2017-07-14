@@ -4,9 +4,20 @@
 		{{#if user}}
 			<h1>{{user.username}}</h1>
 			User since {{userSince}}
+
+			<div class="row inner">
+				<div class="6u 12u$(medium)" id="requests">
+					<h1>{{allRequests.count}}</h1>
+					<h3>Total Requests</h3>
+				</div>
+				<div class="6u$ 12u$(medium)" id="deliveries">
+					<h1>{{allDeliveries.count}}</h1>
+					<h3>Total Deliveries</h3>
+				</div>
+			</div>
+
 			{{#unless equals allRequests.count 0}}
-			<h3>Current Requests</h3>
-			<div class="table-wrapper">
+			<div class="table-wrapper" id="requestsTable" style="display:none">
 				<table class="alt">
 					<thead>
 						<tr>
@@ -33,8 +44,7 @@
 			{{/unless}}
 
 			{{#unless equals allDeliveries.count 0}}
-			<h3>Current Deliveries</h3>
-			<div class="table-wrapper">
+			<div class="table-wrapper" id="deliveriesTable" style="display:none">
 				<table class="alt">
 					<thead>
 						<tr>
