@@ -22,7 +22,9 @@ Meteor.methods({
 			toLocation: toLocation,
 			Price: price,
 			Remarks: remarks,
-			Requestor: requestor
+			Requestor: requestor,
+			Completed: false,
+			Comments: [],
 		});
   },
 
@@ -39,4 +41,13 @@ Meteor.methods({
   getUser(username){
   	return Accounts.findUserByUsername(username);
   },
+
+  addComment(requestId, username, comment){
+  		var existingComments = Requests.findOne({_id:requestId}).Comments;
+  		var commentEntry = [username, comment, new Date()];
+  		existingComments.push(commentEntry);
+		Requests.update(requestId, {
+			$set :{Comments: existingComments}
+		});
+  }
 });

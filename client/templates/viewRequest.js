@@ -31,6 +31,17 @@ Template.viewRequest.events({
 			});
 			alert("Delivery request confirmed");
 		}
+	},
+
+	"submit #newComment"(event, template){
+		event.preventDefault();
+		var newComment = event.target.comment.value;
+		Meteor.call('addComment', this._id, Meteor.user().username, newComment, function(err){
+			if (err){
+				alert(err.reason);
+			}
+		});
+		$('#newComment').trigger('reset');
 	}
 });
 
@@ -40,7 +51,21 @@ Template.viewRequest.helpers({
 		return Requests.findOne({"_id":requestId});
 	},
 
+	momentFormat(date, formatString){
+		if (formatString == "fromNow"){
+			return moment(date).fromNow();
+		}
+		else{
+			return moment(date).format(formatString);
+		}
+		
+	},
+
 	equals(item1, item2){
 		return item1 == item2;
+	},
+
+	or(condition1, condition2){
+		return condition1 || condition2;
 	}
 });

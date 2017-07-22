@@ -39,6 +39,26 @@
 				</tbody>
 			</table>
 		</div>
+
+		{{#if or (equals request.Requestor currentUser.username) (equals request.Deliverer currentUser.username)}}
+		<h3>Chat</h3>
+		<div class="table-wrapper">
+			<table>
+				<tbody>
+					{{#each request.Comments}}
+					<tr>
+						<td><strong><a href="/profile/{{this.[0]}}">{{this.[0]}}</a> says:</strong> {{this.[1]}}</td>
+						<td align="right">{{momentFormat this.[2] "fromNow"}}</td>
+					</tr>
+					{{/each}}
+				</tbody>
+			</table>
+		</div>
+		<form id="newComment">
+			<input type="text" name="comment" placeholder="Enter new comment" />
+		</form>
+		{{/if}}
+
 		{{#if equals request.Requestor currentUser.username}}
 		<button id="delete">Delete</button>
 		{{else}}
