@@ -49,5 +49,11 @@ Meteor.methods({
 		Requests.update(requestId, {
 			$set :{Comments: existingComments}
 		});
+  },
+
+  markCompleted(requestId){
+  		Requests.update(requestId, {
+  			$set :{Completed:true}
+  		});
   }
 });

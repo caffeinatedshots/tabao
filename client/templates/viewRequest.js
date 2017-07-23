@@ -33,6 +33,17 @@ Template.viewRequest.events({
 		}
 	},
 
+	"click #markCompleted"(event, template){
+		if (confirm("Comfirm delivery for " + this.itemName + " is completed?")){
+			Meteor.call('markCompleted', this._id, function(err){
+				if (err){
+					alert(err.reason);
+				}
+			});
+			alert("Delivery is completed.");
+		}
+	},
+
 	"submit #newComment"(event, template){
 		event.preventDefault();
 		var newComment = event.target.comment.value;
@@ -67,5 +78,9 @@ Template.viewRequest.helpers({
 
 	or(condition1, condition2){
 		return condition1 || condition2;
+	},
+
+	and(condition1, condition2){
+		return condition1 && condition2;
 	}
 });

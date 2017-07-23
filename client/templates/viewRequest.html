@@ -54,17 +54,27 @@
 				</tbody>
 			</table>
 		</div>
+		{{#if equals request.Completed false}}
 		<form id="newComment">
 			<input type="text" name="comment" placeholder="Enter new comment" />
 		</form>
 		{{/if}}
+		{{/if}}
 
-		{{#if equals request.Requestor currentUser.username}}
-		<button id="delete">Delete</button>
+		{{#if equals request.Completed false}}
+			{{#if request.Deliverer}}
+				{{#if equals request.Requestor currentUser.username}}
+				<button id="markCompleted">Mark Completed</button>
+				{{/if}}
+			{{else}}
+				{{#if equals request.Requestor currentUser.username}}
+				<button id="delete">Delete</button>
+				{{else}}
+				<button id="deliver">Deliver</button>
+				{{/if}}
+			{{/if}}
 		{{else}}
-		{{#unless request.Deliverer}}
-		<button id="deliver">Deliver</button>
-		{{/unless}}
+		<h4>The request has been completed</h4>
 		{{/if}}
 		{{/with}}
 	</div>

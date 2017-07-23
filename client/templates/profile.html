@@ -7,16 +7,27 @@
 
 			<div class="row inner">
 				<div class="6u 12u$(medium)" id="requests">
-					<h1>{{allRequests.count}}</h1>
-					<h3>Total Requests</h3>
+					<h1>{{currentRequests.count}}</h1>
+					<h3>Current Requests</h3>
 				</div>
 				<div class="6u$ 12u$(medium)" id="deliveries">
-					<h1>{{allDeliveries.count}}</h1>
-					<h3>Total Deliveries</h3>
+					<h1>{{currentDeliveries.count}}</h1>
+					<h3>Current Deliveries</h3>
 				</div>
 			</div>
 
-			{{#unless equals allRequests.count 0}}
+			<div class="row inner">
+				<div class="6u 12u$(medium)">
+					<h1>{{completedRequests.count}}</h1>
+					<h3>Completed Requests</h3>
+				</div>
+				<div class="6u$ 12u$(medium)">
+					<h1>{{completedDeliveries.count}}</h1>
+					<h3>Completed Deliveries</h3>
+				</div>
+			</div>
+
+			{{#unless equals currentRequests.count 0}}
 			<div class="table-wrapper" id="requestsTable" style="display:none">
 				<table class="alt">
 					<thead>
@@ -28,7 +39,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{{#each allRequests}}
+						{{#each currentRequests}}
 						<tr>
 							<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
 							<td>{{fromLocation}}</td>
@@ -41,7 +52,7 @@
 			</div>
 			{{/unless}}
 
-			{{#unless equals allDeliveries.count 0}}
+			{{#unless equals currentDeliveries.count 0}}
 			<div class="table-wrapper" id="deliveriesTable" style="display:none">
 				<table class="alt">
 					<thead>
@@ -53,7 +64,7 @@
 						</tr>
 					</thead>
 					<tbody>
-						{{#each allDeliveries}}
+						{{#each currentDeliveries}}
 						<tr>
 							<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
 							<td>{{fromLocation}}</td>

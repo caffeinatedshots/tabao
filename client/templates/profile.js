@@ -28,12 +28,20 @@ Template.profile.helpers({
 		return moment(Session.get("user").createdAt).fromNow();
 	},
 
-	allRequests(){
-		return Requests.find({"Requestor":FlowRouter.getParam("username")});
+	completedRequests(){
+		return Requests.find({"Requestor":FlowRouter.getParam("username"), "Completed":true});
 	},
 
-	allDeliveries(){
-		return Requests.find({"Deliverer":FlowRouter.getParam("username")});
+	completedDeliveries(){
+		return Requests.find({"Deliverer":FlowRouter.getParam("username"), "Completed":true});
+	},
+
+	currentRequests(){
+		return Requests.find({"Requestor":FlowRouter.getParam("username"), "Completed":false});
+	},
+
+	currentDeliveries(){
+		return Requests.find({"Deliverer":FlowRouter.getParam("username"), "Completed":false});
 	},
 
 	equals(item1, item2){
