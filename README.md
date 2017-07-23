@@ -13,6 +13,7 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 1. In-House User Login
 2. Marketplace for Delivery Requests
 3. Messaging System for Specific Orders
+4. Google Maps Integration
 
 **Technical Elements**
 
@@ -29,25 +30,21 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 - Request
 	- Client-Side Authentication with Required Fields and Integer Verification
 	- Requests Automatically Displayed at Marketplace
+	- Messaging System for Communication between Requestors and Deliverers
+	- Easy Map Links for Directions
 - Deliver (AKA Marketplace)
 	- Displays All Food Requests
 	- Individual Links to Respective Request Details Page
+- Admin Console
+	- Overview of Current Status
+	- Easy Implementation for Admin-level Changes
+- Database
+	- Actual Hawker Centres Updated
 - Front-End Code
 	- Modular Templates (Minimises Rewritten Code)
 - Back-End Code
 	- Clearly Seperated Code for Client & Server
 	- Prevent Client from Accessing Sensitive Data
-
-
-**Timeline**
-
-|**Week**		|**Activity**				|
-|:-------------:|---------------------------|
-|June 4th Week	|Implement Messaging System	|
-|July 1st Week	|Finetune exisiting features|
-|July 2nd Week	|Alpha Testing				|
-|July 3rd Week	|Beta Testing				|
-|July 4th Week	|Enhancements (if any)		|
 
 **Project Log**
 
@@ -73,7 +70,15 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 |Delete Request Function Implementation			|4			|
 |Front Page Content Update						|3			|
 |Request Acceptance Implementation				|6			|
-|**Total**										|**106**	|
+|Moment Library Research & Implementation		|3			|
+|Admin Console Creation & Modificataion			|9			|
+|Comment/Messaging Functionality Implementation	|18			|
+|Request Status Implementation					|2			|
+|Server Wide Changes							|6			|
+|Profile UI Refresh								|8			|
+|Hawker Database Population						|5			|
+|Map Link Implementation						|2			|
+|**Total**										|**159**	|
 
 **Links**
 [Video](http://tiny.cc/tabaovideo2) | [Poster](http://tiny.cc/tabaoposter)
