@@ -1,5 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { Session } from 'meteor/session';
 import { Requests } from '../../imports/requestsDB.js';
 
 import './viewRequest.html';
@@ -60,6 +61,17 @@ Template.viewRequest.helpers({
 	request(){
 		var requestId = FlowRouter.getParam("requestId");
 		return Requests.findOne({"_id":requestId});
+	},
+
+	getHawkerName(postal){
+		Meteor.call('getHawkerName', parseInt(postal), function(error, result){
+			Session.set('hawkerName', result);
+		});
+		return Session.get('hawkerName');
+	},
+
+	mapLink(fromLocation, toLocation){
+		return "http://maps.google.com/maps?saddr=" + fromLocation + "&daddr=" + toLocation
 	},
 
 	momentFormat(date, formatString){

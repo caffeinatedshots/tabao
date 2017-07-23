@@ -46,6 +46,13 @@ Template.profile.helpers({
 
 	equals(item1, item2){
 		return item1 == item2;
+	},
+
+	getHawkerName(postal){
+		Meteor.call('getHawkerName', parseInt(postal), function(error, result){
+			Session.set('hawkerName', result);
+		});
+		return Session.get('hawkerName');
 	}
 });
 

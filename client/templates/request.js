@@ -1,8 +1,12 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
-
+import { Hawkers } from '../../imports/hawkersDB.js';
  
 import './request.html';
+
+Template.request.onCreated(function() {
+    Meteor.subscribe("allHawkers");
+});
 
 Template.request.events({
   'submit .new-request'(event) {
@@ -23,4 +27,10 @@ Template.request.events({
     // Clear form
     alert("Request Submitted")
   },
+});
+
+Template.request.helpers({
+    allHawkers(){
+        return Hawkers.find();
+    }
 });

@@ -1,6 +1,7 @@
 import { Meteor } from 'meteor/meteor';
 import { check } from 'meteor/check';
 import { Requests } from '../imports/requestsDB.js';
+import { Hawkers } from '../imports/hawkersDB.js';
 import { Accounts } from 'meteor/accounts-base';
 
 Meteor.startup(() => {
@@ -55,5 +56,9 @@ Meteor.methods({
   		Requests.update(requestId, {
   			$set :{Completed:true}
   		});
+  },
+
+  getHawkerName(postal){
+  		return Hawkers.findOne({_id:postal}).Name;
   }
 });

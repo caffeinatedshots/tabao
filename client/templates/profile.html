@@ -42,7 +42,7 @@
 						{{#each currentRequests}}
 						<tr>
 							<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
-							<td>{{fromLocation}}</td>
+							<td>{{getHawkerName fromLocation}}</td>
 							<td>{{toLocation}}</td>
 							<td>{{Price}}</td>
 						</tr>
@@ -67,7 +67,7 @@
 						{{#each currentDeliveries}}
 						<tr>
 							<td><a href="../viewRequest/{{_id}}">{{itemName}}</a></td>
-							<td>{{fromLocation}}</td>
+							<td>{{getHawkerName fromLocation}}</td>
 							<td>{{toLocation}}</td>
 							<td>{{Price}}</td>
 						</tr>

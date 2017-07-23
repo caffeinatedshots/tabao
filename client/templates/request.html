@@ -14,10 +14,9 @@
 			<div class="6u 12u$(xsmall)">
 				<div class="select-wrapper">
 					<select name="fromLocation" id="fromLocation" required>
-						<option value="Hawker 1">Hawker 1</option>
-						<option value="Hawker 2">Hawker 2</option>
-						<option value="Hawker 3">Hawker 3</option>
-						<option value="Hawker 4">Hawker 4</option>
+						{{#each allHawkers}}
+						<option value="{{_id}}">{{Name}}</option>
+						{{/each}}
 					</select>
 				</div>
 			</div>

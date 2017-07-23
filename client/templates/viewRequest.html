@@ -12,7 +12,7 @@
 					</tr>
 					<tr>
 						<td>From</td>
-						<td>{{request.fromLocation}} - {{request.fromStall}}</td>
+						<td>{{getHawkerName request.fromLocation}} - {{request.fromStall}}</td>
 					</tr>
 					<tr>
 						<td>To</td>
@@ -65,6 +65,9 @@
 			{{#if request.Deliverer}}
 				{{#if equals request.Requestor currentUser.username}}
 				<button id="markCompleted">Mark Completed</button>
+				{{/if}}
+				{{#if equals request.Deliverer currentUser.username}}
+				<a href="{{mapLink request.fromLocation request.toLocation}}" class="button special small">Directions</a>
 				{{/if}}
 			{{else}}
 				{{#if equals request.Requestor currentUser.username}}

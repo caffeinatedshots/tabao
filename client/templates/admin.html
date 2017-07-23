@@ -41,11 +41,11 @@
 					{{#each allRequests}}
 					<tr>
 						<td><a href="viewRequest/{{_id}}">{{itemName}}</a></td>
-						<td>{{fromLocation}}</td>
+						<td>{{getHawkerName fromLocation}}</td>
 						<td>{{toLocation}}</td>
 						<td>{{Requestor}}</td>
 						<td>{{momentFormat Date 'DD MMMM YYYY, HHmm'}}</td>
-						<td>{{#if Deliverer}}Accepted{{else}}Pending Acceptance{{/if}}</td>
+						<td>{{#if Completed}}Completed{{else}}{{#if Deliverer}}Pending Delivery{{else}}Pending Acceptance{{/if}}{{/if}}</td>
 						<td><button id="deleteRequest">Delete</button></td>
 					</tr>
 					{{/each}}
