@@ -27,6 +27,10 @@
 						<td>{{request.Remarks}}</td>
 					</tr>
 					<tr>
+						<td>Posted</td>
+						<td>{{momentFormat request.Date "fromNow"}}</td>
+					</tr>
+					<tr>
 						<td>Requestor</td>
 						<td><a href="/profile/{{request.Requestor}}">{{request.Requestor}}</a></td>
 					</tr>
@@ -41,7 +45,7 @@
 		</div>
 
 		{{#if or (equals request.Requestor currentUser.username) (equals request.Deliverer currentUser.username)}}
-		<h3>Chat</h3>
+		{{#if equals request.Completed false}}<h3>Chat</h3>{{/if}}
 		<div class="table-wrapper">
 			<table>
 				<tbody>
@@ -67,7 +71,7 @@
 				<button id="markCompleted">Mark Completed</button>
 				{{/if}}
 				{{#if equals request.Deliverer currentUser.username}}
-				<a href="{{mapLink request.fromLocation request.toLocation}}" class="button special small">Directions</a>
+				<a href="{{mapLink request.fromLocation request.toLocation}}" class="button special small" target="_blank">Directions</a>
 				{{/if}}
 			{{else}}
 				{{#if equals request.Requestor currentUser.username}}
