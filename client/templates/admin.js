@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session';
 import { Requests } from '../../imports/requestsDB.js';
+import { Hawkers } from '../../imports/hawkersDB.js';
 
 import './admin.html';
 
@@ -9,7 +10,7 @@ import './admin.html';
 Template.admin.onCreated(function() {
 	Meteor.subscribe("allUsers");
 	Meteor.subscribe("allRequests");
-	
+	Meteor.subscribe("allHawkers");
 
 });
 
@@ -27,10 +28,7 @@ Template.admin.helpers({
 	},
 
 	getHawkerName(postal){
-		Meteor.call('getHawkerName', parseInt(postal), function(error, result){
-			Session.set('hawkerName', result);
-		});
-		return Session.get('hawkerName');
+		return Hawkers.findOne({_id:parseInt(postal)}).Name;
 	}
 });
 

@@ -57,8 +57,4 @@ Meteor.methods({
   			$set :{Completed:true}
   		});
   },
-
-  getHawkerName(postal){
-  		return Hawkers.findOne({_id:postal}).Name;
-  }
 });
