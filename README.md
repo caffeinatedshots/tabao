@@ -78,7 +78,8 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 |Profile UI Refresh								|8			|
 |Hawker Database Population						|5			|
 |Map Link Implementation						|2			|
-|**Total**										|**159**	|
+|Front End Content Updated						|4			|
+|**Total**										|**163**	|
 
 **Links**
 [Video](http://tiny.cc/tabaovideo2) | [Poster](http://tiny.cc/tabaoposter)
