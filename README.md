@@ -48,38 +48,40 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 
 **Project Log**
 
-|**Activity**									|**Hours**	|
-|-----------------------------------------------|:---------:|
-|Liftoff Day 1									|9			|
-|Liftoff Day 2									|9			|
-|Idea Exploration								|3			|
-|Meteor Workshop								|5			|
-|Meteor Experimenting & Tutorial				|8			|
-|Idea Finalisation								|8			|
-|Flow Router Research & Implementation			|9			|
-|Login Interface Research & Implementation		|3			|
-|Front-End Template Sourcing & Adaptation		|3			|
-|Food Request Form Implementation				|3			|
-|MongoDB Research & Implementation				|7			|
-|DB to Front-End Marketplace Implementation		|8			|
-|Login Interface Custom UI Implementation		|6			|
-|Route-Level Authentication Implementation		|6			|
-|Custom Profile & Grouped Routes Implementation	|11			|
-|Custom 404 and 403 Routes Implementation		|3			|
-|Request Details Page Implementation			|4			|
-|Delete Request Function Implementation			|4			|
-|Front Page Content Update						|3			|
-|Request Acceptance Implementation				|6			|
-|Moment Library Research & Implementation		|3			|
-|Admin Console Creation & Modificataion			|9			|
-|Comment/Messaging Functionality Implementation	|18			|
-|Request Status Implementation					|2			|
-|Server Wide Changes							|6			|
-|Profile UI Refresh								|8			|
-|Hawker Database Population						|5			|
-|Map Link Implementation						|2			|
-|Front End Content Update						|4			|
-|**Total**										|**163**	|
+|**Activity**									|**Hours**	|**Date**	|
+|-----------------------------------------------|:---------:|:---------:|
+|Liftoff Day 1									|9			|8 May 		|
+|Liftoff Day 2									|9			|9 May 		|
+|Idea Exploration								|3			|9 May 		|
+|Meteor Workshop								|5			|13 May 	|
+|Meteor Experimenting & Tutorial				|8			|14 May 	|
+|Idea Finalisation								|8			|27 May 	|
+|Flow Router Research & Implementation			|9			|5 June		|
+|Login Interface Research & Implementation		|3			|11 June	|
+|Front-End Template Sourcing & Adaptation		|3			|13 June	|
+|Food Request Form Implementation				|3			|13 June	|
+|MongoDB Research & Implementation				|7			|14 June	|
+|DB to Front-End Marketplace Implementation		|8			|14 June	|
+|Login Interface Custom UI Implementation		|6			|15 June	|
+|Route-Level Authentication Implementation		|6			|15 June	|
+|Custom Profile & Grouped Routes Implementation	|11			|16 June	|
+|Custom 404 and 403 Routes Implementation		|3			|16 June	|
+|Request Details Page Implementation			|4			|18 June	|
+|Delete Request Function Implementation			|4			|19 June	|
+|Front Page Content Update						|3			|21 June	|
+|Request Acceptance Implementation				|6			|21 June	|
+|Moment Library Research & Implementation		|3			|3 July		|
+|Admin Console Creation & Modificataion			|9			|12 July	|
+|Comment/Messaging Functionality Implementation	|18			|22 July	|
+|Request Status Implementation					|2			|23 July	|
+|Server Wide Changes							|6			|23 July	|
+|Profile UI Refresh								|8			|23 July	|
+|Hawker Database Population						|5			|23 July	|
+|Map Link Implementation						|2			|23 July	|
+|Front End Content Update						|4			|23 July	|
+|Heroku Deployment Research & Implementation	|6			|26 July	|
+|MongoDB Cloning to Deployment Platform			|2			|26 July	|
+|**Total**										|**171**	|			|
 
 **Links**
 [Video](http://tiny.cc/tabaovideo2) | [Poster](http://tiny.cc/tabaoposter3)
