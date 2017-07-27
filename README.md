@@ -83,5 +83,9 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 |MongoDB Cloning to Deployment Platform			|2			|26 July	|
 |**Total**										|**171**	|			|
 
+**Poster**
+![Poster](https://www.dropbox.com/s/8e1bb9f9avewmly/Tabao%20Poster%20Milestone%203.png)
+
 **Links**
+
 [Video](http://tiny.cc/tabaovideo2) | [Poster](http://tiny.cc/tabaoposter3)
