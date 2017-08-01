@@ -6,7 +6,8 @@ import { Accounts } from 'meteor/accounts-base';
 import './header.html';
 
 Template.header.events({
-  'click .logout'(event) {
+  'click #logout'(event) {
+  	console.log("logout");
     // Prevent default browser form submit
     event.preventDefault();
 

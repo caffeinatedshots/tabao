@@ -6,7 +6,7 @@
 		<a href="/" class="logo">Tabao</a>
 		<nav class="right">
 			{{#if currentUser}}
-			<a href="#" class="button logout">Logout</a>
+			<a href="#" class="button" id="logout">Logout</a>
 			{{else}}
 			<a href="/login" class="button">Login / Signup</a>
 			{{/if}}
@@ -23,7 +23,7 @@
 			</ul>
 			<ul class="actions vertical">
 				{{#if currentUser}}
-				<li><a href="#" class="button special fit logout">Logout</a></li>
+				<li><a href="#" class="button special fit" id="logout">Logout</a></li>
 				{{else}}
 				<li><a href="/login" class="button special fit">Login / Signup</a></li>
 				{{/if}}
