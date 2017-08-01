@@ -47,6 +47,19 @@ Template.login.events({
             sAlert.success("Thank you for registering with us");
             FlowRouter.go('/');
         }
-    });
-  },
-});
+    });    
+    },
+
+    'click #loginSignupToggle'(event, template){
+        if($("#loginForm").css("display") == "none"){
+            $("#signupForm").hide();
+            $("#loginForm").show();
+        }
+        else{
+            $("#loginForm").hide();
+            $("#signupForm").show();
+        }
+    }
+
+
+  });
