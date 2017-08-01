@@ -7,6 +7,8 @@ import { Accounts } from 'meteor/accounts-base';
 Meteor.startup(() => {
 	Meteor.publish('allUsers', function() {
   		return Meteor.users.find();
+
+  	
   });
 });
 

@@ -25,7 +25,9 @@ Template.request.events({
     Meteor.call('addRequest', itemName, fromLocation, fromStall, toLocation, price, remarks, requestor);
 
     // Clear form
-    alert("Request Submitted")
+    sAlert.success("Your request has been submitted");
+
+    $('.new-request').trigger('reset');
   },
 });
 

@@ -16,10 +16,10 @@ Template.login.events({
 
     Meteor.loginWithPassword(username, password, function(err){
         if (err){
-            alert(err.reason);
+            sAlert.error(err.reason);
         }
         else{
-            alert("You are now logged in");
+            sAlert.success("You are now logged in");
             FlowRouter.go('/');
         }
     });
@@ -40,11 +40,11 @@ Template.login.events({
             password: password
     }, function(err){
         if(err){
-            alert(err.reason);
+            sAlert.error(err.reason);
         }
         else{
             $('.signup').trigger('reset');
-            alert("Thank you for registering with us");
+            sAlert.success("Thank you for registering with us");
             FlowRouter.go('/');
         }
     });

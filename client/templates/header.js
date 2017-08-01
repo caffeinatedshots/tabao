@@ -11,7 +11,7 @@ Template.header.events({
     event.preventDefault();
 
     Meteor.logout();
-    alert("You are now logged out");
+    sAlert.info("You are now logged out");
     FlowRouter.go("/");
   },
 });

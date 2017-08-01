@@ -37,10 +37,10 @@ Template.admin.events({
 		if (confirm("Confirm delete request for " + this.itemName + " ?")){
 			Meteor.call('deleteRequest', this._id, function(err){
 				if (err){
-					alert(err.reason);
+					sAlert.error(err.reason);
 				}
 			});
-			alert("Request has been deleted");
+			sAlert.success("Request has been deleted");
 		};
 	},
 })

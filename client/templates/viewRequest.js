@@ -17,10 +17,10 @@ Template.viewRequest.events({
 		if (confirm("Confirm delete request for " + this.itemName + " ?")){
 			Meteor.call('deleteRequest', this._id, function(err){
 				if (err){
-					alert(err.reason);
+					sAlert.error(err.reason);
 				}
 			});
-			alert("Request has been deleted");
+			sAlert.info("Your request has been deleted");
 			history.back();
 		};
 	},
@@ -29,10 +29,10 @@ Template.viewRequest.events({
 		if (confirm("Confirm delivery for " + this.itemName + " ?")){
 			Meteor.call('deliverRequest', this._id, Meteor.user().username, function(err){
 				if (err){
-					alert(err.reason);
+					sAlert.error(err.reason);
 				}
 			});
-			alert("Delivery request confirmed");
+			sAlert.success("Your delivery request has been confirmed");
 		}
 	},
 
@@ -40,10 +40,10 @@ Template.viewRequest.events({
 		if (confirm("Comfirm delivery for " + this.itemName + " is completed?")){
 			Meteor.call('markCompleted', this._id, function(err){
 				if (err){
-					alert(err.reason);
+					sAlert.error(err.reason);
 				}
 			});
-			alert("Delivery is completed.");
+			sAlert.success("Your delivery is now completed");
 		}
 	},
 
@@ -52,7 +52,7 @@ Template.viewRequest.events({
 		var newComment = event.target.comment.value;
 		Meteor.call('addComment', this._id, Meteor.user().username, newComment, function(err){
 			if (err){
-				alert(err.reason);
+				sAlert.error(err.reason);
 			}
 		});
 		$('#newComment').trigger('reset');
