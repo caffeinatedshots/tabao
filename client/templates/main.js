@@ -3,9 +3,9 @@ import { Template } from 'meteor/templating';
 import { Accounts } from 'meteor/accounts-base';
 
  
-import './login.html';
+import './main.html';
 
-Template.login.events({
+Template.main.events({
   'submit .login'(event) {
     // Prevent default browser form submit
     event.preventDefault();
@@ -19,7 +19,7 @@ Template.login.events({
             sAlert.error(err.reason);
         }
         else{
-            sAlert.success("You are now logged in");
+            sAlert.success("Welcome, " + username);
             FlowRouter.go('/');
         }
     });
@@ -59,7 +59,16 @@ Template.login.events({
             $("#loginForm").hide();
             $("#signupForm").show();
         }
-    }
+    },
+
+    'click #logout'(event, template) {
+    // Prevent default browser form submit
+    event.preventDefault();
+
+    Meteor.logout();
+    sAlert.info("You are now logged out");
+    FlowRouter.go("/");
+  },
 
 
   });

@@ -10,7 +10,7 @@ Meteor.startup(function(){
 		html: false,
 		onRouteClose: false,
 		stack: true,
-		offset: 100,
+		offset: 80,
 		beep: false,
 		onClose: _.noop
 	});

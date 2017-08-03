@@ -4,13 +4,6 @@
 			<a href="#menu"><span>Menu</span></a>
 		</nav>
 		<a href="/" class="logo">Tabao</a>
-		<nav class="right">
-			{{#if currentUser}}
-			<a href="#" class="button" id="logout">Logout</a>
-			{{else}}
-			<a href="/login" class="button">Login / Signup</a>
-			{{/if}}
-		</nav>
 		<nav id="menu">
 			<ul class="links">
 				<li><a href="/">Home</a></li>
@@ -20,13 +13,6 @@
 				<li><a href="/deliver">Deliver</a></li>
 				{{/if}}
 				<li><a href="/about">About</a></li>
-			</ul>
-			<ul class="actions vertical">
-				{{#if currentUser}}
-				<li><a href="#" class="button special fit" id="logout">Logout</a></li>
-				{{else}}
-				<li><a href="/login" class="button special fit">Login / Signup</a></li>
-				{{/if}}
 			</ul>
 		</nav>
 	</header>

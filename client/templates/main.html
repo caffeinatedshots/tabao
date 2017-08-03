@@ -3,19 +3,36 @@
 			<section id="banner">
 				<div class="content">
 					{{#if currentUser}}
-					<h1>Welcome, {{currentUser.username}}</h1>
+					<h1 style="color:#f6755e">Welcome, {{currentUser.username}}</h1>
 					{{else}}
-					<h1>Welcome to Tabao</h1>
+					<h1 style="color:#f6755e">Welcome to Tabao</h1>
 					{{/if}}
-					<p>What would you like to eat today?</p>
+					<p style="color:white">What would you like to eat today?</p>
+					{{#if currentUser}}
 					<ul class="actions">
-						{{#if currentUser}}
 						<li><a href="/request" class="button">Request</a></li>
 						<li><a href="/deliver" class="button special">Deliver</a></li>
-						{{else}}
-						<li><a href="/login" class="button">Get Started</a></li>
-						{{/if}}
 					</ul>
+					<ul class="actions">
+						<li><a href="#" class="button alt" id="logout">Logout</a></li>
+					</ul>
+					{{else}}
+					<div class="inner">
+						<form method="post" class="login" id="loginForm" style="display:block; color:white; text-weight:bold;" align="center">
+							<input type="text" required name="username" placeholder="Username" /><br>
+							<input type="password" required name="password" placeholder="Password" /><br>
+							<input type="submit" value="Login" class="button fit" />
+							<button class="special" id="loginSignupToggle">Click Here to Signup</button>
+						</form>
+						<form method="post" class="signup" id="signupForm" style="display:none; color:white; text-weight:bold;" align="center">
+							<input type="text" required name="username" placeholder="Username" /><br>
+							<input type="password" required name="password" placeholder="Password" /><br>
+							<input type="password" required name="passwordConfirm" onchange="form.password.pattern = this.value" placeholder="Confirm Password" /><br>
+							<input type="submit" value="Signup" class="button special fit" />
+							<button id="loginSignupToggle">Click Here to Login</button>
+						</form>
+					</div>
+					{{/if}}
 				</div>
 			</section>
 
