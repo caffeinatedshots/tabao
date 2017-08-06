@@ -1,11 +1,16 @@
 import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
+import { $ } from 'meteor/jquery';
 import { Hawkers } from '../../imports/hawkersDB.js';
  
 import './request.html';
 
 Template.request.onCreated(function() {
     Meteor.subscribe("allHawkers");
+});
+
+Template.request.onRendered(function(){
+    $('#hawkerDropdown').select2();
 });
 
 Template.request.events({
