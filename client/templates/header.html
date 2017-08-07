@@ -3,6 +3,11 @@
 		<nav class="left">
 			<a href="#menu"><span>Menu</span></a>
 		</nav>
+		{{#if currentUser}}
+		<nav class="right">
+			<a href="/profile/{{currentUser.username}}" class="button">{{currentUser.username}}</a>
+		</nav>
+		{{/if}}
 		<a href="/" class="logo">Tabao</a>
 		<nav id="menu">
 			<ul class="links">

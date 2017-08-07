@@ -17,10 +17,24 @@ Template.deliver.events({
 
 Template.deliver.helpers({
 	requests(){
-		return Requests.find();
+		return Requests.find({Deliverer: null,
+			Requestor: {$ne:Meteor.user().username},
+			Completed: false});
 	},
 
 	getHawkerName(postal){
 		return Hawkers.findOne({_id:parseInt(postal)}).Name;
+	},
+
+	and(condition1, condition2){
+		return condition1 && condition2;
+	},
+
+	equals(item1, item2){
+		return item1 == item2;
+	},
+
+	or(condition1, condition2){
+		return condition1 || condition2;
 	}
 });
