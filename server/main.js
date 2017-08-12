@@ -54,7 +54,12 @@ Meteor.methods({
 		});
   },
 
-  markCompleted(requestId){
+  markCompleted(requestId, rating){
+    var delivererObject = Accounts.findUserByUsername(Requests.findOne({_id:requestId}).Deliverer);
+    var existingRatings = delivererObject.profile.Ratings;
+    var newRating = [requestId, parseInt(rating)];
+    existingRatings.push(newRating);
+    Meteor.users.update(delivererObject._id, {$set:{"profile.Ratings":existingRatings}});
   		Requests.update(requestId, {
   			$set :{Completed:true}
   		});

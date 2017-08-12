@@ -30,6 +30,34 @@ Template.profile.helpers({
 		return moment(Session.get("user").createdAt).fromNow();
 	},
 
+	userRating(){
+		var username = FlowRouter.getParam("username");
+		Meteor.call('getUser', username, function(error, result){
+			Session.set("user", result);
+		});
+		var user = Session.get("user");
+		var ratingsArr = user.profile.Ratings;
+		if (ratingsArr.length == 0){
+			return "-";
+		}
+		else{
+			var totalRatings = 0;
+			for (i = 0; i < ratingsArr.length; i++){
+				totalRatings += ratingsArr[i][1];
+			}
+			return parseFloat(totalRatings / ratingsArr.length).toFixed(2);
+		}
+	},
+
+	numRatings(){
+		var username = FlowRouter.getParam("username");
+		Meteor.call('getUser', username, function(error, result){
+			Session.set("user", result);
+		});
+		var user = Session.get("user");
+		return user.profile.Ratings.length;
+	},
+
 	completedRequests(){
 		return Requests.find({"Requestor":FlowRouter.getParam("username"), "Completed":true});
 	},

@@ -37,7 +37,8 @@ Template.main.events({
 
     Accounts.createUser({
             username: username,
-            password: password
+            password: password,
+            profile: {Ratings:[]}
     }, function(err){
         if(err){
             sAlert.error(err.reason);

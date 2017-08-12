@@ -52,14 +52,20 @@ Template.viewRequest.events({
 	"submit #ratingForm"(event, template){
 		event.preventDefault();
 		var rating = event.target.rating.value;
-		if (confirm("Comfirm delivery for " + this.itemName + " is completed with " + rating + " stars?")){
-			Meteor.call('markCompleted', this._id, function(err){
+		if (rating == ""){
+			sAlert.error("Please rate your deliverer");
+		}
+		else{
+			if (confirm("Comfirm delivery for " + this.itemName + " is completed with " + rating + " stars?")){
+			Meteor.call('markCompleted', this._id, rating, function(err){
 				if (err){
 					sAlert.error(err.reason);
 				}
 			});
 			sAlert.success("Your delivery is now completed");
+			}
 		}
+		
 	},
 
 	"submit #newComment"(event, template){

@@ -3,7 +3,9 @@
 	<div class="inner" align="center">
 		{{#if user}}
 			<h1>{{user.username}}</h1>
-			User since {{userSince}}
+			<h1>{{userRating}} / 5</h1>
+			<h5>(out of {{numRatings}} ratings)</h5>
+			<h4>User since {{userSince}}</h4>
 
 			<div class="row inner">
 				<div class="6u 12u$(medium)" id="requests">
