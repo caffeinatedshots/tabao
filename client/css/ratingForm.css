@@ -1,0 +1,19 @@
+.ratingStars input:radio{
+	visibility:hidden;
+	position:absolute;
+}
+
+.ratingStars label{
+	display:inline-block;
+}
+
+
+.ratingStars label{
+	color: #25a2c3;
+	cursor:pointer;
+}
+
+.ratingStars label:hover,
+.ratingStars label input:checked + i{
+	color:#f78a76;
+}

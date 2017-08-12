@@ -68,16 +68,28 @@
 		{{#if equals request.Completed false}}
 			{{#if request.Deliverer}}
 				{{#if equals request.Requestor currentUser.username}}
-				<button id="markCompleted">Mark Completed</button>
+				<form id="ratingForm" style="display:none;">
+					<h3 align="center">Rate your Deliverer</h3>
+					<div class="ratingStars">
+						<label><input type="radio" name="rating" value="1"><i class="fa fa-star fa-2x"></i></label>
+						<label><input type="radio" name="rating" value="2"><i class="fa fa-star fa-2x"></i></label>
+						<label><input type="radio" name="rating" value="3"><i class="fa fa-star fa-2x"></i></label>
+						<label><input type="radio" name="rating" value="4"><i class="fa fa-star fa-2x"></i></label>
+						<label><input type="radio" name="rating" value="5"><i class="fa fa-star fa-2x"></i></label>
+					</div>
+					<br><br>
+					<input type="submit" id="markCompleted" class="button" value="Confirm" style="padding:0 5%">
+				</form>
+				<button id="markCompletedToggle" style="padding:0 5%">Mark Completed</button>
 				{{/if}}
 				{{#if equals request.Deliverer currentUser.username}}
-				<a href="{{mapLink request.fromLocation request.toLocation}}" class="button special small" target="_blank">Directions</a>
+				<a href="{{mapLink request.fromLocation request.toLocation}}" class="button special small" target="_blank" style="padding:0 5%">Directions</a>
 				{{/if}}
 			{{else}}
 				{{#if equals request.Requestor currentUser.username}}
-				<button id="delete">Delete</button>
+				<button id="delete" style="padding:0 5%">Delete</button>
 				{{else}}
-				<button id="deliver">Deliver</button>
+				<button id="deliver" style="padding:0 5%">Deliver</button>
 				{{/if}}
 			{{/if}}
 		{{else}}

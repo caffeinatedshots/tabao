@@ -36,8 +36,23 @@ Template.viewRequest.events({
 		}
 	},
 
-	"click #markCompleted"(event, template){
-		if (confirm("Comfirm delivery for " + this.itemName + " is completed?")){
+	"click #markCompletedToggle"(event, template){
+		if($("#ratingForm").css("display") == "none"){
+            $("#ratingForm").css("display", "block");
+            $("#markCompletedToggle").html("Cancel");
+            $("#markCompletedToggle").addClass("special");
+        }
+        else{
+        	$("#ratingForm").css("display", "none");
+        	$("#markCompletedToggle").html("Mark Completed");
+        	$("#markCompletedToggle").removeClass("special");
+        }
+	},
+
+	"submit #ratingForm"(event, template){
+		event.preventDefault();
+		var rating = event.target.rating.value;
+		if (confirm("Comfirm delivery for " + this.itemName + " is completed with " + rating + " stars?")){
 			Meteor.call('markCompleted', this._id, function(err){
 				if (err){
 					sAlert.error(err.reason);
