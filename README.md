@@ -75,13 +75,19 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 |Comment/Messaging Functionality Implementation	|18			|22 July	|
 |Request Status Implementation					|2			|23 July	|
 |Server Wide Changes							|6			|23 July	|
-|Profile UI Refresh								|8			|23 July	|
+|Profile UI Refresh								|4			|23 July	|
 |Hawker Database Population						|5			|23 July	|
 |Map Link Implementation						|2			|23 July	|
 |Front End Content Update						|4			|23 July	|
 |Heroku Deployment Research & Implementation	|6			|26 July	|
 |MongoDB Cloning to Deployment Platform			|2			|26 July	|
-|**Total**										|**171**	|			|
+|Custom Alert Notifications Implementation		|10			|1 August	|
+|Login UI Changes and Minor Bug Fixes			|6			|1 August	|
+|Login Page Migration							|3			|3 August	|
+|Searchable Dropdown Research & Implementation	|14			|6 August	|
+|User Rating System Research & Implementation	|18			|12 August	|
+|Minor Bug Fixes and Deployment DB Refresh		|2			|12 August	|
+|**Total**										|**232**	|			|
 
 **Deployment**
 
