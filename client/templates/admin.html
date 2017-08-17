@@ -6,16 +6,18 @@
 				<table class="alt">
 					<thead>
 						<tr>
-							<th>ID</th>
 							<th>Username</th>
+							<th>Total Requests</th>
+							<th>Total Deliveries</th>
 							<th>Created At</th>
 						</tr>
 					</thead>
 					<tbody>
 						{{#each allUsers}}
 						<tr>
-							<td>{{_id}}</td>
 							<td>{{username}}</td>
+							<td align="center">{{totalRequests username}}</td>
+							<td align="center">{{totalDeliveries username}}</td>
 							<td>{{momentFormat createdAt 'DD MMMM YYYY, HHmm'}}</td>
 						</tr>
 						{{/each}}

@@ -29,6 +29,14 @@ Template.admin.helpers({
 
 	getHawkerName(postal){
 		return Hawkers.findOne({_id:parseInt(postal)}).Name;
+	},
+
+	totalRequests(username){
+		return Requests.find({'Requestor':username}).count();
+	},
+
+	totalDeliveries(username){
+		return Requests.find({'Deliverer':username}).count();
 	}
 });
 
