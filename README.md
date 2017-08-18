@@ -10,38 +10,49 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 
 **Core Features**
 
-1. In-House User Login
+1. In-House User Login & Rating System
 2. Marketplace for Delivery Requests
-3. Messaging System for Specific Orders
+3. Messaging System for Requestor-Deliverer Communication
 4. Google Maps Integration
 
 **Technical Elements**
 
 - Mobile-Friendly Responsive Web Template
+- Custom Notifications/Alerts
 - Login/Signup
 	- Server-side Error Handling (Error Reason Displayed as Alerts to User)
 	- Client-Side Authentication for Repeat Passwords for Signup
 - Dynamic Front Page Content for Logged In Users
-- Profile, Request, Deliver Pages only viewable to Logged In Users
+- User Authentication for Profile, Request and Deliver Pages
 - Profile
 	- Renders Profile of Username from URL
 	- Renders Placeholder if Not Found
-	- Displays Current Deliveries and Requests
+	- Displays User Rating, Request/Delivery Statistics and Current Request/Delivery
 - Request
 	- Client-Side Authentication with Required Fields and Integer Verification
 	- Requests Automatically Displayed at Marketplace
-	- Messaging System for Communication between Requestors and Deliverers
-	- Easy Map Links for Directions
+- View Request
+	- Different Views/Options for Different Stakeholders
+		- |**Delivery State**	|**Requestor**	|**Deliverer**	|
+		  |---------------------|:-------------:|:-------------:|
+		  |Pending Acceptance	|Delete			|-				|
+		  |Pending Delivery 	|Mark Completed	|Directions		|
+		  |Completed			|Give Rating	|-				|
+	- Real-Time Messaging System for Communication between Requestors and Deliverers
+	- Pre-Generated Google Maps Link for Deliverers
+	- Post-Delivery Rating Provided to Deliverer
 - Deliver (AKA Marketplace)
-	- Displays All Food Requests
+	- Custom View for Users with Existing Requests/Deliveries
 	- Individual Links to Respective Request Details Page
 - Admin Console
-	- Overview of Current Status
-	- Easy Implementation for Admin-level Changes
+	- Overview of Current Users and Statistics
+	- Admin Override for Request Deletion
 - Database
-	- Actual Hawker Centres Updated
+	- User Database with Ratings
+	- Requests Database with Details and State
+	- All 107 Hawkers Pulled from Data.gov
 - Front-End Code
-	- Modular Templates (Minimises Rewritten Code)
+	- Modular Templates (Selective Rendering, Minimises Rewritten Code)
 - Back-End Code
 	- Clearly Seperated Code for Client & Server
 	- Prevent Client from Accessing Sensitive Data
