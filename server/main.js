@@ -4,6 +4,12 @@ import { Requests } from '../imports/requestsDB.js';
 import { Hawkers } from '../imports/hawkersDB.js';
 import { Accounts } from 'meteor/accounts-base';
 
+var http = require("http");
+
+setInterval(function() {
+    http.get("http://tabao.herokuapp.com");
+}, 300000);
+
 Meteor.startup(() => {
 	Meteor.publish('allUsers', function() {
   		return Meteor.users.find();

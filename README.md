@@ -98,7 +98,8 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 |Searchable Dropdown Research & Implementation	|14			|6 August	|
 |User Rating System Research & Implementation	|18			|12 August	|
 |Minor Bug Fixes and Deployment DB Refresh		|2			|12 August	|
-|**Total**										|**232**	|			|
+|onReady Loading Placeholder Implementation		|2			|22 August	|
+|**Total**										|**234**	|			|
 
 **Deployment**
 
@@ -106,4 +107,4 @@ With our web application we aim to achieve lowered cost via crowdsourcing. The i
 
 **Links**
 
-[Video](http://tiny.cc/tabaovideo2) | [Poster](http://tiny.cc/tabaoposter3)
+[Video](http://tiny.cc/tabaovideo2) | [Poster](http://tiny.cc/tabaopostersplashdown)
