@@ -8,13 +8,25 @@ import './admin.html';
 
 
 Template.admin.onCreated(function() {
-	Meteor.subscribe("allUsers");
-	Meteor.subscribe("allRequests");
+	Meteor.subscribe("allUsers", function onReady(){
+		Session.set("usersLoaded", true);
+	});
+	Meteor.subscribe("allRequests", function onReady(){
+		Session.set("requestsLoaded", true);
+	});
 	Meteor.subscribe("allHawkers");
 
 });
 
 Template.admin.helpers({
+	usersLoaded(){
+		return Session.get("usersLoaded");
+	},
+
+	requestsLoaded(){
+		return Session.get("requestsLoaded");
+	},
+	
 	allUsers(){
 		return Meteor.users.find();
 	},

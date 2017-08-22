@@ -42,7 +42,12 @@ Meteor.methods({
   },
 
   getUser(username){
-  	return Accounts.findUserByUsername(username);
+  	if (Accounts.findUserByUsername(username) == null){
+      return "UserNotFound";
+    }
+    else{
+      return Accounts.findUserByUsername(username);
+    }
   },
 
   addComment(requestId, username, comment){

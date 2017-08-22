@@ -1,7 +1,12 @@
 <template name="profile">
 <section class="wrapper">
 	<div class="inner" align="center">
-		{{#if user}}
+		{{#if equals user null}}
+			<i class="fa fa-refresh fa-spin fa-5x fa-fw" style="color:#f6755e"></i>
+		{{else}}
+			{{#if equals user "UserNotFound"}}
+			<h1>User Not Found</h1>
+			{{else}}
 			<h1>{{user.username}}</h1>
 			<h1>{{userRating}} / 5</h1>
 			<h5>(out of {{numRatings}} ratings)</h5>
@@ -78,8 +83,7 @@
 				</table>
 			</div>
 			{{/unless}}
-		{{else}}
-			<h1>User not found</h1>
+		{{/if}}
 		{{/if}}
 	</div>
 </section>

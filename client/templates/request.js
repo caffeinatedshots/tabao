@@ -2,11 +2,14 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 import { $ } from 'meteor/jquery';
 import { Hawkers } from '../../imports/hawkersDB.js';
+import { Session } from 'meteor/session';
  
 import './request.html';
 
 Template.request.onCreated(function() {
-    Meteor.subscribe("allHawkers");
+    Meteor.subscribe("allHawkers", function onReady(){
+        Session.set('hawkersLoaded', true);
+    });
 });
 
 Template.request.onRendered(function(){
@@ -37,6 +40,10 @@ Template.request.events({
 });
 
 Template.request.helpers({
+    hawkersLoaded(){
+        return Session.get('hawkersLoaded');
+    },
+
     allHawkers(){
         return Hawkers.find();
     }

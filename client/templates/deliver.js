@@ -7,7 +7,9 @@ import { Hawkers } from '../../imports/hawkersDB.js';
 import './deliver.html';
 
 Template.deliver.onCreated(function() {
-	Meteor.subscribe('allRequests');
+	Meteor.subscribe('allRequests', function onReady(){
+		Session.set('requestsLoaded', true);
+	});
 	Meteor.subscribe("allHawkers");
 });
 
@@ -16,6 +18,10 @@ Template.deliver.events({
 });
 
 Template.deliver.helpers({
+	requestsLoaded(){
+		return Session.get('requestsLoaded');
+	},
+
 	requests(){
 		return Requests.find({Deliverer: null,
 			Requestor: {$ne:Meteor.user().username},

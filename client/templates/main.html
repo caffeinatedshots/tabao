@@ -2,6 +2,9 @@
 	<!-- Banner -->
 			<section id="banner">
 				<div class="content">
+					{{#if loggingIn}}
+					<i class="fa fa-refresh fa-spin fa-5x fa-fw" style="color:#f6755e"></i>
+					{{else}}
 					{{#if currentUser}}
 					<h1 style="color:#f6755e">Welcome, {{currentUser.username}}</h1>
 					{{else}}
@@ -32,6 +35,7 @@
 							<button id="loginSignupToggle" style="padding: 0 10%">Click here to Login</button>
 						</form>
 					</div>
+					{{/if}}
 					{{/if}}
 				</div>
 			</section>
